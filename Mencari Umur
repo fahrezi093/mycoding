@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        
+        int tahun_lahir,tahun_sekarang,hasil;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("=====================");
+        System.out.println("Masukan Tahun Lahir Anda :");
+        tahun_lahir = scan.nextInt();
+
+        System.out.println("======================");
+        System.out.println("Masukan Tahun Sekarang :");
+        tahun_sekarang = scan.nextInt();
+
+        hasil = tahun_sekarang - tahun_lahir;
+        
+        System.out.println("====================");
+        System.out.println("Umur anda sekarang :");
+        System.out.println(hasil);
+    }
+}
