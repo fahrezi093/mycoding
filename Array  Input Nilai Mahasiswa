@@ -1,0 +1,59 @@
+
+import java.util.Scanner;
+
+public class pop {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int n,i,j;
+ 
+        System.out.print("Masukkan jumlah murid : ");
+        n = input.nextInt();
+        System.out.println("=========================");
+
+        String nama [] = new String [n];
+        String status [] = new String [n];
+        int nilai [] = new int [n];
+
+        for (i=0; i<n; i++) {
+             System.out.println("Murid ke : " + (i+1));
+             System.out.print("Nama :");
+              nama [i] = input.next();
+
+             System.out.print("Nilai murid : ");
+             nilai [i] = input.nextInt();
+
+            if (nilai [i] <= 100 && nilai [i] >= 85) {
+                status [i] = "Nilai anda A";
+                
+            } else if (nilai [i] <= 84 && nilai [i] >= 75) {
+                status [i] = "Nilai anda B";
+            
+            } else if (nilai [i] <= 74 && nilai [i] >= 65) {
+                status [i] = "Nilai anda C";
+            
+            } else if (nilai [i] <= 64 && nilai [i] >= 45) {
+                status [i] = "Nilai anda D";
+
+            } else if (nilai [i] <= 44) {
+                status [i] = "Nilai anda E";
+
+            } else {
+                status [i] = "Nilai yang anda masukkan tidak valid";
+            }
+
+        }
+        System.out.println();
+        System.out.println("========================");
+        System.out.println("DAFTAR NILAI MURID");
+        System.out.println("========================");
+        System.out.println("No   Nama   Nilai    Status");
+
+        for (i=1; i<n; i++) {
+            System.out.println(i + "     " + nama[i] + "      " + nilai[i] + "      " + status[i]);
+        }
+
+    }
+    
+}
