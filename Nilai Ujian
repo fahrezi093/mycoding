@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class nilaiujian {
+    public static void main(String[] args) {
+        
+        int a,b;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Masukkan nilai : ");
+        a = input.nextInt();
+        System.out.println("===================");
+
+        if (a <= 100 && a >= 85) {
+            System.out.println("Nilai anda adalah : A \n Pertahankan!!!");
+        }    
+
+        else if (a < 85 && a >= 70) {
+            System.out.println("Nilai anda adalah : B \n Harus lebih baik lagi");
+        }    
+            
+        else if (a < 70 && a >= 50) {
+            System.out.println("Nilai anda adalah : C \n Harus perbanyak belajar lagi");
+         }
+         
+        else if (a < 50 && a >= 0){
+            System.out.println("Nilai anda adalah : D \n Harus perbanayk belajar lagi");
+         }   
+        
+         else {
+            System.out.println("Nilai yang anda masukkan tidak valid");
+         }  
+
+       
+    }
+    
+}
