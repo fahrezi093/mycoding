@@ -1,0 +1,98 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main (String [] args){ 
+       
+        Scanner in = new Scanner (System.in);
+        String nama,nim;
+        String huruf;
+        
+        System.out.print("Masukan Nama : ");
+        nama = in.nextLine();
+        
+        System.out.println("======================");
+        System.out.print(" Masukan NIM : ");
+        nim = in.nextLine();
+
+        System.out.println("======================");
+        System.out.print(" Silahkan Pilih : \n A. Luas Segitiga \n B. Luas Persegi \n C. Luas  Persegi Panjang \n\n Masukan pilihan :");
+        huruf = in.nextLine(); 
+
+        System.out.println("======================");
+        System.out.println(nama+" dengan NIM "+nim+" Memilih Pilihan : "+huruf);
+        
+        
+        switch (huruf){
+    
+            case "A":
+            
+            Double a,t,hasil;
+               
+                System.out.println("======================");
+                System.out.print("Masukkan Nilai Alas : ");
+                a = in.nextDouble();
+                
+                System.out.println("======================");
+                System.out.print("Masukkan Nilai Tinggi : ");
+                t = in.nextDouble();
+
+                hasil = (a*t)/0.5;
+
+                System.out.println("======================");
+                System.out.print("Hasilnya Adalah : ");
+                System.out.printf("%.2f",hasil);
+
+                System.out.println("\n ======================");
+                System.out.print("Terimakasih telah menggunakan jasa kami \n \n _by : Mohammad Fahrezi_\n" );  
+
+                break;
+            
+             case "B":
+
+            int s,ndak;
+              
+                System.out.println("======================");
+                System.out.print("Masukkan Nilai Panjang : ");
+                s = in.nextInt();
+                
+                ndak = s*s;
+                
+                System.out.println("======================");     
+                System.out.print("Hasilnya Adalah : ");
+                System.out.println(ndak);
+               
+                System.out.println("======================");
+                System.out.print("Terimakasih telah menggunakan jasa kami \n \n _by : Mohammad Fahrezi_\n" );                
+                
+                break;
+            
+            case "C":
+
+            int p,l,berak;
+               
+                System.out.println("======================");    
+                System.out.print("Masukkan Nilai Panjang : ");
+                p = in.nextInt();
+                
+                System.out.println("======================");
+                 System.out.print("Masukkan Nilai Lebar : ");
+                l = in.nextInt();
+
+                berak = p*l;
+
+                System.out.println("======================");
+                System.out.print("Hasilnya Adalah : ");
+                System.out.println(berak);
+                
+                System.out.println("======================");
+                System.out.print("Terimakasih telah menggunakan jasa kami \n \n _by : Mohammad Fahrezi_\n" );  
+
+                break;
+
+                default :
+                System.out.println("Pilihan yang Anda Masukkan Salah. Masukkan nilai A,B,C");
+
+    
+        }
+    }
+}
