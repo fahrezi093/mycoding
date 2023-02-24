@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+
+        int p,l,hasil;
+
+        System.out.println("===================");
+        System.out.println("Masukan Panjang :");
+        p = scan.nextInt();
+
+        System.out.println("===================");
+        System.out.println("Masukan Lebar :");
+        l = scan.nextInt();
+
+        hasil = p*l;
+
+        System.out.println("===================");
+        System.out.println("Hasilnya adalah");
+        System.out.println(hasil);
+    }
+    
+}
