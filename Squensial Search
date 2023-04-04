@@ -1,0 +1,22 @@
+public class squensialsearch2 {
+    public static void main(String[] args) {
+        
+        int [] data = {10, 5, 34, 61, 23, 45, 78, 33, 21};
+        int cari = 78;
+        int i = 0;
+        boolean ditemukan = false;
+
+        for (i=0; i<data.length; i++) {
+            if (data[i] == cari) {
+                ditemukan = true;
+                break;
+            }
+        }
+        if (ditemukan) {
+            System.out.println("Data : " + cari + " Ditemukan pada index : " + i);
+        }
+        else {
+            System.out.println("Data tidak ditemukan");
+        }
+    }
+}
