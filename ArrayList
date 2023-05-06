@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class ArrayList {
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+
+        ArrayList <String> listnama = new ArrayList <String> ();
+
+        for (int i=0; i<5; i++) {
+            listnama.add(input.next());
+        }
+
+        panggil(listnama);
+    }
+    public static void panggil(ArrayList<String> listnama) {
+        for (int i=0; i<listnama.size; i++) {
+            System.out.println(listnama.get(i));
+        }
+    }
+}
