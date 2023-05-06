@@ -1,0 +1,120 @@
+
+public class classobject {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int bilangan[] = {7,6,5,4,3,2,1};
+        mergeSortInt(bilangan);
+    }
+    public static void mergeSortInt(int[] bilangan)
+    {
+        System.out.println("Sebelum");
+        for(int i =0;i< bilangan.length;i++)
+        {
+            System.out.println(bilangan[i] + " ");
+        }
+        
+        bilangan=pisahInt(bilangan);
+        
+        System.out.println("Sesudah");
+        for(int i =0;i< bilangan.length;i++)
+        {
+            System.out.println(bilangan[i] + " ");
+        }
+    }
+
+    public static int[] pisahInt(int[] bilangan) {
+        //kalau data sudah menjadi satuan
+        if(bilangan.length<=1)
+        {
+            // langsung kembalikan array
+            return bilangan;
+        }
+        int nilaiTengah = bilangan.length/2;
+        int[] kiri = new int[nilaiTengah];
+        int[] kanan;
+        // cek apakah data array ganjil atau genap
+        if(bilangan.length % 2 ==0)
+        {
+            kanan = new int[nilaiTengah];
+        }
+        else //ganjil
+        {
+            kanan = new int [nilaiTengah+1];
+        }
+        // isi array sisi kiri
+        for(int i =0;i< kiri.length ;i++)
+        {
+            kiri[i]= bilangan[i];
+        }
+        // isi array sisi kanan
+        for(int i =0;i< kanan.length ;i++)
+        {
+            kanan[i]= bilangan[nilaiTengah+i];
+        }
+        // pemanggilan fungsi ini untuk memisah sisi kanan dan kiri lagi 
+        kiri = pisahInt(kiri);
+        kanan = pisahInt(kanan);
+        
+        // siapkan array kosong untuk menampung pengembalian fungsi gabung
+        int [] hasil= new int[bilangan.length];
+        
+        
+        //isi array hasil dari data yang sudah digabug
+        hasil = gabungInt(kiri, kanan);
+        //kembalikan array hasil
+        return hasil;
+        
+    }
+
+    public static int[] gabungInt(int[] kiri, int[] kanan) {
+        int[] hasilGabung= new int [kiri.length+kanan.length];
+        //kiri length = 1
+        //kanan length = 2
+        
+        //siapkan penanda index kiri dan index kanan, dan index hasil gabung
+        int indexKiri=0;
+        int indexKanan=0;
+        int indexHasilGabung=0;
+        
+        //perulangan untuk mengisi array hasilGabung
+        
+        while (indexKiri < kiri.length || indexKanan < kanan.length)
+        {
+            // cek apakah sisi kiri dan kanan masih ada/ belum dibandingkan
+            if(indexKiri < kiri.length && indexKanan<kanan.length)
+            {
+                // kalau kedua sisi masih tersedia
+                if(kiri[indexKiri] <kanan[indexKanan])// banding
+                {
+                    hasilGabung[indexHasilGabung]=kiri[indexKiri];
+                    indexHasilGabung++;
+                    indexKiri++;
+                }
+                else {
+                    hasilGabung[indexHasilGabung]=kanan[indexKanan];
+                    indexHasilGabung++;
+                    indexKanan++;
+                }
+            }
+            else if(indexKiri <kiri.length)// kalau hanya sisi kiri yag masih tersedia
+            {
+                hasilGabung[indexHasilGabung]=kiri[indexKiri];
+                indexHasilGabung++;
+                indexKiri++;
+            }
+            else if(indexKanan <kanan.length)// kalau hanya sisi kanan yag masih tersedia
+            {
+                hasilGabung[indexHasilGabung]=kanan[indexKanan];
+                indexHasilGabung++;
+                indexKanan++;
+            }
+        }// akhir while
+        //kembalikan nilai array gabung
+        return hasilGabung;
+    }
+    
+}
